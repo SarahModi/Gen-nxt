@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edugate - Nxt-Gen</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Edugate</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#courses" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Edugate</h1>
+            <p>Your gateway to quality online education. Learn from AI instructors and transform your future.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('courses')">Explore Courses</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('about')">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <i class="fas fa-laptop-code"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Edugate</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>Edugate is a family-founded online school dedicated to providing accessible, high-quality education to students worldwide. We believe learning should be engaging, personalized, and transformative.</p>
+                    
+                    <h3>Why Choose Edugate?</h3>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-users"></i>
+                            <h4>AI Instructors</h4>
+                            <p>It is time to break traditional schooling methods and adapt to learn from AI Tutors</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <h4>Flexible Schedule</h4>
+                            <p>Study at your own pace with 24/7 course access</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Community Support</h4>
+                            <p>Join a vibrant learning community with peer support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2>Our Courses</h2>
+            <p class="section-subtitle">Comprehensive learning paths for all skill levels</p>
+            
+            <div class="course-grid">
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Learn HTML, CSS, JavaScript and modern frameworks to build responsive websites</p>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> Beginner to Advanced</li>
+                        <li><i class="fas fa-check"></i> 12 Weeks Duration</li>
+                        <li><i class="fas fa-check"></i> Project Portfolio</li>
+                    </ul>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Data Science</h3>
+                    <p>Master data analysis, visualization, and machine learning techniques</p>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> Python & R Programming</li>
+                        <li><i class="fas fa-check"></i> 16 Weeks Duration</li>
+                        <li><i class="fas fa-check"></i> Real-world Projects</li>
+                    </ul>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Create stunning visuals and master design principles and tools</p>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> Adobe Creative Suite</li>
+                        <li><i class="fas fa-check"></i> 10 Weeks Duration</li>
+                        <li><i class="fas fa-check"></i> Design Portfolio</li>
+                    </ul>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-business-time"></i>
+                    </div>
+                    <h3>Business Management</h3>
+                    <p>Develop essential business skills and entrepreneurial mindset</p>
+                    <ul class="course-features">
+                        <li><i class="fas fa-check"></i> All Levels</li>
+                        <li><i class="fas fa-check"></i> 14 Weeks Duration</li>
+                        <li><i class="fas fa-check"></i> Business Plan Development</li>
+                    </ul>
+                    <button class="btn btn-outline">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p class="section-subtitle">Get in touch to start your learning journey</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@edugate.shofaar.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-EDUgate</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Office Hours</h4>
+                            <p>Mon-Fri: 9AM-6PM EST</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="subject" name="subject" required>
+                            <option value="">Select Subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="admissions">Admissions</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Edugate</span>
+                    </div>
+                    <p>Transforming education through innovative online learning experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Edugate Online School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -729,6 +728,7 @@
                 <p>&copy; 2024 EDUG8 Online School. All rights reserved.</p>
             </div>
         </div>
+        <div id="courses"></div>
     </footer>
 
     <script>
@@ -805,6 +805,50 @@
                 navbar.style.backdropFilter = 'none';
             }
         });
-    </script>
+        
+    <script type="module">
+  import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+  const SUPABASE_URL = "https://yourproject.supabase.co";
+  const SUPABASE_ANON_KEY = "your-anon-key";
+  const db = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  async function showCourses() {
+    const { data: courses, error } = await db.from("courses").select("*");
+    if (error) {
+      console.error(error);
+      return;
+    }
+
+    const container = document.getElementById("courses");
+    container.innerHTML = courses
+      .map(
+        (c) => `
+        <div class="course-card">
+          <h3>${c.title}</h3>
+          <p>${c.description}</p>
+          <button class="btn btn-outline" onclick="enroll('${c.id}')">Enroll</button>
+        </div>`
+      )
+      .join("");
+  }
+
+  async function enroll(courseId) {
+    const { data: userData } = await db.auth.getUser();
+    const user = userData?.user;
+    if (!user) return alert("Please log in first!");
+
+    const { error } = await db.from("enrollments").insert({
+      user_id: user.id,
+      course_id: courseId,
+      progress: 0,
+    });
+
+    if (error) console.error(error);
+    else alert("Enrolled successfully!");
+  }
+
+  showCourses();
+</script>
 </body>
 </html>

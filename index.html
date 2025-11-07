@@ -539,6 +539,17 @@
             </div>
         </div>
     </section>
+    
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2>Our Courses</h2>
+            <p class="section-subtitle">Explore AI-driven, engaging courses from Nursery to Grade 12 and beyond.</p>
+
+            <!-- This is where Supabase will load your course cards -->
+            <div id="courses-list" class="course-grid"></div>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -731,86 +742,16 @@
         <div id="courses"></div>
     </footer>
 
-    <script>
-        // Mobile Navigation Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
+   <!-- Place where your Supabase courses will appear -->
+<div id="courses"></div>
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }));
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Scroll to section function
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-            
-            // Here you would typically send the data to a server
-            console.log('Form submitted:', formData);
-            
-            // Show success message
-            alert('Thank you for your message! We will get back to you soon.');
-            
-            // Reset form
-            this.reset();
-        });
-
-        // Navbar background change on scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.backdropFilter = 'blur(10px)';
-            } else {
-                navbar.style.background = 'var(--white)';
-                navbar.style.backdropFilter = 'none';
-            }
-        });
-        
-    <script type="module">
+<!-- Supabase connection -->
+<script type="module">
   import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-  const SUPABASE_URL = "https://yourproject.supabase.co";
-  const SUPABASE_ANON_KEY = "your-anon-key";
+  const SUPABASE_URL = "https://yourproject.supabase.co"; // replace with your real Supabase project URL
+  const SUPABASE_ANON_KEY = "your-anon-key"; // replace with your actual anon key
+
   const db = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
   async function showCourses() {
@@ -820,7 +761,7 @@
       return;
     }
 
-    const container = document.getElementById("courses");
+   const container = document.getElementById("courses-list");
     container.innerHTML = courses
       .map(
         (c) => `
@@ -850,6 +791,36 @@
 
   showCourses();
 </script>
-    <script type="module" src="lms.js"></script>
+
+<!-- Your navigation + form logic -->
+<script>
+  // Mobile Navigation Toggle
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Contact form
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your message! We will get back to you soon.');
+    this.reset();
+  });
+</script>
+
 </body>
 </html>

@@ -1,2 +1,3 @@
 # shofaar.github.io
-Edugate Nxt-Gen
+GENNXT 
+An AI Driven Online School

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EDUG8 — Grades</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #F8F9FA;
+}
+
+header {
+    background: #1E40AF;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+h2 {
+    text-align: center;
+    color: #1E3A8A;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.course-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.2s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+}
+
+.course-icon {
+    font-size: 40px;
+    color: #1E40AF;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 2px solid #1E40AF;
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #1E40AF;
+    color: #fff;
+}
+
+.back-btn {
+    margin: 20px auto;
+    display: block;
+    width: fit-content;
+}
+</style>
+</head>
+<body>
+
+<header>
+    EDUG8 — Grades we Offer
+</header>
+
+<div class="container">
+    <h2>Select Your Grade</h2>
+    <p class="section-subtitle">Choose any grade to explore subjects powered by AI learning.</p>
+
+    <div class="course-grid" id="gradeCards"></div>
+
+    <button class="btn back-btn" onclick="goHome()">← Back to Home</button>
+</div>
+
+<script>
+const gradeList = [
+    "Nursery", "LKG", "HKG", "1st Grade", "2nd Grade", "3rd Grade", "4th Grade", "5th Grade",
+    "6th Grade", "7th Grade", "8th Grade", "9th Grade", "10th Grade", "11th Grade", "12th Grade"
+];
+
+let container = document.getElementById("gradeCards");
+
+gradeList.forEach(g => {
+    let card = `
+        <div class='course-card'>
+            <div class='course-icon'><i class="fas fa-book"></i></div>
+            <h3>${g}</h3>
+            <p>AI-guided lessons, interactive activities and progress tracking.</p>
+            <button class='btn'>View Lessons</button>
+        </div>`;
+
+    container.innerHTML += card;
+});
+
+function goHome() {
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

@@ -530,7 +530,8 @@
                 <h1>Welcome to EDUG8</h1>
                 <p>Your gateway to quality online education. Learn from expert instructors and transform your future.</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="scrollToSection('courses')">Explore Courses</button>
+                    <button class="btn btn-primary" onclick="document.getElementById('courses').scrollIntoView({ behavior: 'smooth' })">
+    Explore Courses</button>
                     <button class="btn btn-secondary" onclick="scrollToSection('about')">Coming Soon!</button>
                 </div>
             </div>
